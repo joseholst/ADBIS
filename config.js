@@ -12,16 +12,5 @@ const config = {
     }
 }; 
 
-// Forbind og hent data
-sql.connect(config).then(() => {
-    return sql.query('SELECT * FROM [User] WHERE [UserID] = 1');
-  }).then(result => {
-    console.log('Data fra tabellen user:');
-    console.log(result.recordset);
-    sql.close();
-  }).catch(err => {
-    console.log('Fejl:', err.message);
-  });
-
 
 module.exports = config;

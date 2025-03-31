@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CC Golf</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js"></script>
 </head>
 <body>
+
+    <div class="container">
+        <!-- File upload form -->
+        <form action="app.html" method ="post" enctype="multipart/form-data">
+            <h2>Send en besked til CC Golf</h2>
+            <input name="file" type="file" multiple>
+           <!--<button type="submit">Upload</button>--> 
+
+        <!-- Chatbox -->
+        <div class="chatbox">
+            <div class="chat-messages" id="messages"></div>
+            <input type="text" id="chatInput" placeholder="Skriv en besked">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
 </body>
 </html>
