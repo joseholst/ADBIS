@@ -1,5 +1,5 @@
 const express = require('express');
-const { sendMessage } = require('/app');
+const { insertMessageToDatabase, createChatToDatabase } = require('./controller');
 
 const app = express();
 const PORT = 3000; 
@@ -7,6 +7,7 @@ const PORT = 3000;
 app.use(express.json()); 
 
 app.post('/sendMessage', insertMessageToDatabase);
+app.post('/createdChat', createChatToDatabase);
 
 app.listen(PORT, () => {
     console.log(`Server kører på http://localhost:${PORT}`);

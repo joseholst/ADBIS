@@ -1,6 +1,22 @@
 const sql = require('mssql');
 const config = require ('./config');
 
+async function createChat (name){
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+
+        await request.query(`INSERT INTO Chat (Title, UserID) VALUES ('${name}', '1')`);
+        
+        console.log('Message inserted into database');
+    } catch (error) {
+        console.error('Error inserting message:', error);
+        throw error;
+    }
+}
+
+
+
 async function sendMessage(message) {
     try {
         await sql.connect(config);
@@ -18,3 +34,4 @@ async function sendMessage(message) {
 }
 
 module.exports.sendMessage = sendMessage;
+module.exports.createChat = createChat;

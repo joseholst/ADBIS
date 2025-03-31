@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC Golf</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+          <div class="box">
+            <h1>Opret et nyt måltid</h1>
+            <form class ="create" id ="createForm" action="/meal" method="POST">
+                <label for="name">Måltidets navn:</label>
+                <input type="text" id="name" name="name">
+                <button onclick="createChat()">Send</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
