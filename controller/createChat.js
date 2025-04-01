@@ -1,10 +1,12 @@
-const App = require ("./app");
+const App = require ("../model/model1");
 
 
 const createChatToDatabase = async (req, res) => {
     try {
         const name = req.body.name;
+        console.log(name);
         await App.createChat(name);
+        res.redirect('/chatOversigt')
         res.status(200).send('Chat created!');
     } catch (error) {
         console.error(error);

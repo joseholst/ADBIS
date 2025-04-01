@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CC Golf</title>
     <link rel="stylesheet" href="app.css">
-    <script src="app.js"></script>
+    <script src="../model/model1.js"></script>
+    <script src="server.js"></script>
 </head>
 <body>
 
     <div class="container">
         <div class="content">
+            <h1>CC Golf</h1>
+            <h2>Velkommen til CC Golf</h2>
+            <p>Her kan du oprette og deltage i måltider.</p>
           <div class="box">
             <h1>Opret et nyt måltid</h1>
-            <form class ="create" id ="createForm" action="/meal" method="POST">
+            <form class ="create" id ="createForm" action="/createdChat" method="POST">
                 <label for="name">Måltidets navn:</label>
                 <input type="text" id="name" name="name">
                 <button onclick="createChat()">Send</button>
