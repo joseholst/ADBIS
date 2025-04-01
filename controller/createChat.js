@@ -7,7 +7,6 @@ const createChatToDatabase = async (req, res) => {
         console.log(name);
         await App.createChat(name);
         res.redirect('/chatOversigt')
-        res.status(200).send('Chat created!');
     } catch (error) {
         console.error(error);
         res.status(500).send('Something went wrong.');

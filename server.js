@@ -1,5 +1,6 @@
 const express = require ('express');
 const {insertMessageToDatabase, createChatToDatabase } = require ('./controller/createChat');
+const { showChatsFromDatabase } = require ('./controller/chatOversigt');
 
 const app = express();
 const PORT = 3000; 
@@ -13,7 +14,7 @@ app.use(express.static('view', { index: 'forside.html' })); //dette kører til f
 //routes
 app.post('/sendMessage', insertMessageToDatabase);
 app.post('/createdChat', createChatToDatabase);
-app.get('/chatOversigt', showChatsFromDatase);
+app.get('/chatOversigt', showChatsFromDatabase);
 
 
 //start server
