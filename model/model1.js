@@ -1,7 +1,7 @@
 const sql = require('mssql');
 const config = require ('../config');
 
-async function createChat(name){
+/*async function createChat(name){
     try {
         await sql.connect(config);
         const request = new sql.Request();
@@ -14,7 +14,7 @@ async function createChat(name){
         throw error;
     }
 }
-
+*/
 
 async function showChats(){
     try {
@@ -50,5 +50,4 @@ async function sendMessage(message) {
 }
 
 module.exports.sendMessage = sendMessage;
-module.exports.createChat = createChat;
 module.exports.showChats = showChats;

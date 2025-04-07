@@ -1,11 +1,11 @@
-const App = require ("../model/model1");
+const App = require ("../model/classes/Message");
 
 
-const createChatToDatabase = async (req, res) => {
+const createChat = async (req, res) => {
     try {
-        const name = req.body.name;
-        console.log(name);
-        await App.createChat(name);
+        const title = req.body.title;
+        console.log(title);
+        await App.createChat(title);
         res.redirect('/chatOversigt')
     } catch (error) {
         console.error(error);
@@ -13,7 +13,9 @@ const createChatToDatabase = async (req, res) => {
     }
 };
 
-module.exports.createChatToDatabase = createChatToDatabase;
+module.exports.createChat = createChat;
+
+
 
 const insertMessageToDatabase = async (req, res) => {
     try {

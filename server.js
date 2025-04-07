@@ -1,5 +1,5 @@
 const express = require ('express');
-const {insertMessageToDatabase, createChatToDatabase } = require ('./controller/createChat');
+const {insertMessageToDatabase, createChatToDatabase, createChat } = require ('./controller/createChat');
 const { showChatsFromDatabase } = require ('./controller/chatOversigt');
 
 const app = express();
@@ -13,7 +13,7 @@ app.use(express.static('view', { index: 'forside.html' })); //dette kører til f
 
 //routes
 app.post('/sendMessage', insertMessageToDatabase);
-app.post('/createdChat', createChatToDatabase);
+app.post('/createdChat', createChat);
 app.get('/chatOversigt', showChatsFromDatabase);
 
 
