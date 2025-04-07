@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CC Golf</title>
     <link rel="stylesheet" href="app.css">
-    <script src="../model/model1.js"></script>
+    <script src="../model/classes/Message.js"></script>
     <script src="server.js"></script>
 </head>
 <body>
@@ -18,8 +18,8 @@
           <div class="box">
             <h1>Opret et nyt måltid</h1>
             <form class ="create" id ="createForm" action="/createdChat" method="POST">
-                <label for="name">Måltidets navn:</label>
-                <input type="text" id="name" name="name">
+                <label for="title">Måltidets navn:</label>
+                <input type="text" id="title" name="title">
                 <button onclick="createChat()">Send</button>
             </form>
             </div>

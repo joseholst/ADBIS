@@ -20,9 +20,9 @@ class Message {
             await sql.connect(config);
             const request = new sql.Request();
     
-            await request.query(`INSERT INTO Chat (Title, UserID) VALUES ('${title}', '1')`);
+            await request.query(`INSERT INTO Chat (Title, UserID) VALUES ('${this.title}', '1')`);
             
-            console.log(`Message inserted into database "${title}"`);
+            console.log(`Message inserted into database "${this.title}"`);
         } catch (error) {
             console.error('Error inserting message:', error);
             throw error;
