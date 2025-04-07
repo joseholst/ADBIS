@@ -10,21 +10,26 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="content">
-            <h1>CC Golf</h1>
-            <h2>Velkommen til CC Golf</h2>
-            <p>Her kan du oprette og deltage i måltider.</p>
-          <div class="box">
-            <h1>Opret et nyt måltid</h1>
-            <form class ="create" id ="createForm" action="/createdChat" method="POST">
-                <label for="title">Måltidets navn:</label>
-                <input type="text" id="title" name="title">
-                <button onclick="createChat()">Send</button>
-            </form>
-            </div>
-        </div>
-    </div>
+    <div class="box">
+        <h1>Opret en chat med CC Golf</h1>
+
+        <!-- Formular -->
+        <form class="create" id="createForm" action="/createdChat" method="POST" >
+          <!-- Titel -->
+          <label for="title">Chattens navn:</label><br />
+          <input type="text" id="title" name="title" required /><br /><br />
+
+          <!-- Beskrivelse -->
+          <label for="description">Beskrivelse:</label><br />
+          <textarea id="description" name="description" rows="4" cols="50" required></textarea><br /><br />
+
+          <!-- Filupload -->
+          <label for="file">Upload billede eller video:</label><br />
+          <input type="file" id="file" name="file" accept="image/*,video/*" /><br /><br />
+
+          <button onclick="createChat()">Send</button>
+        </form>
+      </div>
 
 </body>
 </html>

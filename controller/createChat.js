@@ -1,21 +1,22 @@
-const Message = require ("../model/classes/Message");
+const Chat = require ("../model/classes/Chat");
 
 
 const createChatIntoDatabase = async (req, res) => {
     try {
         const title = req.body.title;
+        const description = req.body.description;
+        console.log(description);
         console.log(title);
 
-        const msg = new Message(
+        const msg = new Chat(
             null,         // messageID
             title,        // title
-            null,         // assignedTrainer
-            null,         // description
+            description,  // description
             null,         // user
             new Date(),   // date
             'open'        // messageStatus
         ); 
-        await msg.createChat(title);
+        await msg.createChat(title, description);
 
 
         res.redirect('/chatOversigt')
@@ -24,7 +25,6 @@ const createChatIntoDatabase = async (req, res) => {
         res.status(500).send('Something went wrong.');
     }
 };
-
 module.exports.createChatIntoDatabase = createChatIntoDatabase;
 
 

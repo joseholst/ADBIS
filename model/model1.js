@@ -16,23 +16,6 @@ const config = require ('../config');
 }
 */
 
-async function showChats(){
-    try {
-        await sql.connect(config);
-        const request = new sql.Request();
-
-        const result = await request.query('SELECT Title FROM Chat WHERE UserID = 1');
-
-        console.log('Chat view:', result.recordset);
-        return result.recordset;
-    } catch (error) {
-        console.error('Error fetching chats:', error);
-        throw error;
-    }
-}
-
-
-
 async function sendMessage(message) {
     try {
         await sql.connect(config);
@@ -50,4 +33,3 @@ async function sendMessage(message) {
 }
 
 module.exports.sendMessage = sendMessage;
-module.exports.showChats = showChats;
