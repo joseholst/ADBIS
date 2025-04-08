@@ -1,6 +1,8 @@
+/* === GENERELT === */
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
+  background-color: #f8f9fb;
 }
 
 .main {
@@ -9,6 +11,7 @@ body {
   flex-direction: column;
 }
 
+/* === NAVBAR === */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -18,7 +21,7 @@ body {
   height: 70px;
   width: 100%;
   box-sizing: border-box;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .upper-content {
@@ -72,6 +75,7 @@ body {
   height: 120px;
 }
 
+/* === KNAPPER === */
 button {
   border: none;
   border-radius: 6px;
@@ -107,14 +111,141 @@ button {
   background-color: #f0f0f0;
 }
 
+/* === IKONER === */
 .icon-size {
   width: 24px;
   height: 24px;
-  object-fit: contain; /* holder proportioner uden at strække billedet */
+  object-fit: contain;
 }
 
 .icon-size1 {
   width: 45px;
   height: 45px;
-  object-fit: contain; /* holder proportioner uden at strække billedet */
+  object-fit: contain;
+}
+
+/* === FORMULAR BOKS === */
+.box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus,
+input[type="file"]:focus {
+  outline: none;
+  border-color: #4d90fe;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"],
+button#create-chat-form {
+  width: 100%;
+  padding: 12px;
+  background-color: #e6eeff;
+  color: #1a1a1a;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #d4e3ff;
+}
+
+button[type="submit"]:active {
+  background-color: #c2d7ff;
+}
+
+
+
+
+
+/* === chat oversigt === */
+
+.chat-box {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.chat-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chat-box li {
+  background: #fff;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.chat-box li strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+
+.chat-item {
+  position: relative;
+  background: #fff;
+  padding: 16px 16px 16px 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.chat-item .status {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666666;
+  background: #b7d5f5;
+  padding: 4px 8px;
+  border-radius: 6px;
 }

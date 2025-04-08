@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CC Golf</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../controller/chatOversigt.js"></script>
 </head>
 
 
@@ -20,12 +21,10 @@
                     Søg
                 </button>
                 <hr>
-                <a href="/ChatOprettelse.html">
                     <button id="create-chat" class="primary-button">
                         <img src="./images/plus-icon.svg" alt="chats" class="icon-size" />
                         Opret en chat
                     </button>
-                </a>
                 <a href="/">
                     <button id="all-chats" class="primary-button">
                         <img src="./images/chat.png" alt="chats" class="icon-size" />
@@ -49,6 +48,33 @@
             </div>
         </div>
     </div>
+
+
+<div id="chat-container"></div>
+
+<script>
+    document.getElementById("create-chat").addEventListener("click", () => {
+      fetch("/ChatOprettelse.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("chat-container").innerHTML = html;
+        })
+        .catch(err => console.error("Kunne ikke hente ChatOprettelse:", err));
+    });
+
+    //gør det muligt at se chatoversigten
+    if (window.location.pathname === "/") {
+    fetch("/chatOversigt")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("chat-container").innerHTML = html;
+      })
+      .catch(err => console.error("Kunne ikke hente chatoversigt:", err));
+  } 
+  </script>
+
+
+
 </body>
 
 

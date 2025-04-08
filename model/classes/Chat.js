@@ -37,7 +37,7 @@ class Chat {
             await sql.connect(config);
             const request = new sql.Request();
     
-            const result = await request.query('SELECT Title FROM Chat WHERE UserID = 1');
+            const result = await request.query('SELECT Title, Description, MessageStatus FROM Chat WHERE UserID = 1');
     
             console.log('Chat view:', result.recordset);
             return result.recordset;

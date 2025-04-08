@@ -17,8 +17,7 @@ app.use(express.static('view', { index: 'app.html' })); //dette kører til forsi
 
 
 //routes
-app.post('/sendMessage', insertMessageToDatabase);
-app.post('/createdChat', upload.single("file"),createChatIntoDatabase);
+app.post('/createChat', upload.single("file"),createChatIntoDatabase);
 app.get('/chatOversigt', showChatsFromDatabase);
 
 
