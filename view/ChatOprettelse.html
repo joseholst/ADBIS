@@ -9,12 +9,21 @@
     <script src="server.js"></script>
 </head>
 <body>
+  <div id="navbar"></div>
+
+  <script>
+    fetch("app.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html);
+  </script>
+
 
     <div class="box">
         <h1>Opret en chat med CC Golf</h1>
 
         <!-- Formular -->
-        <form class="create" id="createForm" action="/createdChat" method="POST" >
+        <form class="create" id="createForm" action="/createdChat" method="POST" enctype="multipart/form-data">
+          
           <!-- Titel -->
           <label for="title">Chattens navn:</label><br />
           <input type="text" id="title" name="title" required /><br /><br />
