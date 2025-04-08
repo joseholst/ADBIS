@@ -3,12 +3,13 @@ const config = require ('../../config');
 
 class Chat {
     constructor(
-        chatID, title, description, userID, date
+        chatID, title, description, mediaType, filePath, date
     ){
         this.chatID = chatID;
         this.title = title;
         this.description = description;
-        this.userID = userID;
+        this.mediaType = mediaType;
+        this.filePath = filePath;
         this.date = date;
         this.messageStatus = 'active';
     }
@@ -18,7 +19,7 @@ class Chat {
             await sql.connect(config);
             const request = new sql.Request();
     
-            await request.query(`INSERT INTO Chat (Title, Description, UserID) VALUES ('${this.title}', '${this.description}', '1')`);
+            await request.query(`INSERT INTO Chat (Title, Description, MediaType, FilePath, MessageStatus, UserID) VALUES ('${this.title}', '${this.description}', '${this.mediaType}', '${this.filePath}', '${this.messageStatus}','1')`);
             
             console.log(`Message inserted into database "${this.title}"`);
         } catch (error) {
