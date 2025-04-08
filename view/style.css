@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #dbdae6;
+  height: 70px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.upper-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-content button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.lower-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lower-content .user-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info h1 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.user-info h2 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 400;
+}
+
+#logo {
+  height: 50px;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.primary-button {
+  background-color: #ebf2ff;
+}
+
+.primary-button:hover {
+  background-color: #dce6f9;
+}
+
+.primary-button:active {
+  background-color: #c8d9f2;
+}
+
+.secondary-button {
+  background-color: white;
+  border: 1px solid #bababa;
+}
+
+.secondary-button:hover {
+  border: 1px solid #7f7f7f;
+}
+
+.secondary-button:active {
+  background-color: #f0f0f0;
+}
+
+.icon-size {
+  width: 24px;
+  height: 24px;
+  object-fit: contain; /* holder proportioner uden at strække billedet */
+}
+
+.icon-size1 {
+  width: 45px;
+  height: 45px;
+  object-fit: contain; /* holder proportioner uden at strække billedet */
+}

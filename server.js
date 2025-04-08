@@ -7,7 +7,7 @@ const PORT = 3000;
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); //denne skal være her for at kunne sende data fra html til serveren
-app.use(express.static('view', { index: 'forside.html' })); //dette kører til forsiden
+app.use(express.static('view', { index: 'app.html' })); //dette kører til forsiden
 
 
 
