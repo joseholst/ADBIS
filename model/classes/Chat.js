@@ -12,7 +12,7 @@ class Chat {
         this.mediaType = mediaType;
         this.mediaData = mediaData;
         this.date = date;
-        this.messageStatus = 'active';
+        this.messageStatus = 'afventer svar';
     }
 
     async createChat(){

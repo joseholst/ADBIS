@@ -142,6 +142,13 @@ h1 {
   color: #1a1a1a;
 }
 
+h4 {
+  font-size: 14px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #180286;
+}
+
 form label {
   font-weight: 600;
   display: block;
@@ -230,7 +237,9 @@ button[type="submit"]:active {
 
 
 .chat-item {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   background: #fff;
   padding: 16px 16px 16px 16px;
   margin-bottom: 12px;
@@ -239,13 +248,72 @@ button[type="submit"]:active {
 }
 
 .chat-item .status {
-  position: absolute;
+  position: flex;
   top: 16px;
   right: 16px;
   font-size: 12px;
   font-weight: 600;
   color: #666666;
-  background: #b7d5f5;
+  background: rgb(252, 242, 185);
   padding: 4px 8px;
   border-radius: 6px;
+}
+
+.openChat {
+  display: flex;
+ 
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: #b7d5f5;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.openChat:hover {
+  background-color: #a7caee;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: column; 
+  gap: 4px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: row;     
+  justify-content: flex-end; 
+  align-items: center;     
+  gap: 8px;                
+  margin-top: 8px;        
+ 
+
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 16px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 60px;
 }

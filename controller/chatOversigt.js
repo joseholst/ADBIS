@@ -13,13 +13,20 @@ const showChatsFromDatabase = async (req, res) => {
           <ul>
       ${chats.map(chat => `
         <li class="chat-item">
+        <div class="top-row">
           <strong>${chat.Title}</strong><br>
-          <span>${chat.Description || ''}</span>
+          <span>${chat.Description && chat.Description.length > 20 
+  ? chat.Description.substring(0, 20) + '...' 
+  : chat.Description || ''}</span>
+        </div>
+        <div class="right-column">
           <span class="status">${chat.MessageStatus || ''}</span>
+          <button class="openChat" onclick="alert('Du har åbnet chat: ${chat.Title}')">Gå til chat</button>
+        </div>
         </li>
       `).join("")}
     </ul>
-        </div>
+      </div>
           `;
 
 
