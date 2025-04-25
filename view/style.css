@@ -17,7 +17,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  background-color: #68c4af;
+  background-color: #041E3C;
   height: 70px;
   width: 100%;
   box-sizing: border-box;
@@ -51,6 +51,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  color: white;
 }
 
 .lower-content .user-wrapper {
@@ -63,6 +64,7 @@ body {
   font-size: 14px;
   margin: 0;
   font-weight: 600;
+  color: white;
 }
 
 .user-info h2 {
@@ -73,6 +75,16 @@ body {
 
 #logo {
   height: 120px;
+}
+
+.button1{
+  width: 22px;
+  height: 22px;
+}
+
+.button2{
+  width: 20px;
+  height: 20px;
 }
 
 /* === KNAPPER === */

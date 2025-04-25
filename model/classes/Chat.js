@@ -4,11 +4,12 @@ const config = require ('../../config');
 
 class Chat {
     constructor(
-        chatID, title, description, mediaType, mediaData, date
+        chatID, title, description, category, mediaType, mediaData, date
     ){
         this.chatID = chatID;
         this.title = title;
         this.description = description;
+        this.category = category
         this.mediaType = mediaType;
         this.mediaData = mediaData;
         this.date = date;
@@ -22,7 +23,7 @@ class Chat {
     
             request.input("MediaData", sql.VarBinary(sql.MAX), this.mediaData);
 
-            await request.query(`INSERT INTO Chat (Title, Description, MediaType, MediaData, MessageStatus, UserID) VALUES ('${this.title}', '${this.description}', '${this.mediaType}', @MediaData, '${this.messageStatus}','1')`);
+            await request.query(`INSERT INTO Chat (Title, Description, Category, MediaType, MediaData, MessageStatus, UserID) VALUES ('${this.title}', '${this.description}', '${this.category}', '${this.mediaType}', @MediaData, '${this.messageStatus}','1')`);
             
             console.log(`Message inserted into database "${this.title}"`);
         } catch (error) {
@@ -37,7 +38,7 @@ class Chat {
             await sql.connect(config);
             const request = new sql.Request();
     
-            const result = await request.query('SELECT Title, Description, MessageStatus FROM Chat WHERE UserID = 1');
+            const result = await request.query('SELECT Title, Description, Category, MessageStatus FROM Chat WHERE UserID = 1');
     
             console.log('Chat view:', result.recordset);
             return result.recordset;

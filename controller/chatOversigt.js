@@ -15,9 +15,10 @@ const showChatsFromDatabase = async (req, res) => {
         <li class="chat-item">
         <div class="top-row">
           <strong>${chat.Title}</strong><br>
-          <span>${chat.Description && chat.Description.length > 20 
-  ? chat.Description.substring(0, 20) + '...' 
-  : chat.Description || ''}</span>
+          <span>${chat.Description && chat.Description.length > 100 
+  ? chat.Description.substring(0, 100) + '...' 
+  : chat.Description || ''}</span> 
+        <span> Kategori: ${chat.Category}</span>
         </div>
         <div class="right-column">
           <span class="status">${chat.MessageStatus || ''}</span>
