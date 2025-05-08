@@ -18,6 +18,7 @@ const showChatsFromDatabase = async (req, res) => {
           <span>${chat.Description && chat.Description.length > 100 
   ? chat.Description.substring(0, 100) + '...' 
   : chat.Description || ''}</span> 
+        <span> Træner: ${chat.Trainer}</span>
         <span> Kategori: ${chat.Category}</span>
         </div>
         <div class="right-column">

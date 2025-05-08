@@ -6,6 +6,7 @@ const createChatIntoDatabase = async (req, res) => {
     try {
         const title = req.body.title;
         const description = req.body.description;
+        const trainer = req.body.trainer;
         const category = req.body.category;
 
         let mediaType = null;
@@ -20,6 +21,7 @@ const createChatIntoDatabase = async (req, res) => {
             null,         
             title,
             description,
+            trainer,
             category,
             mediaType,
             mediaData,

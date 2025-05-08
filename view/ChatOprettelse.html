@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <script src="../model/classes/Message.js"></script>
     <script src="server.js"></script>
+
+    
 </head>
 <body>
     <div class="box">
       <div class="head">
-        <h1>Opret en chat med CC Golf</h1>
-        <h4>Bemærk en fast pris på 300 kr per online lektion</h4>
+        <h1>Opret En Ordre </h1>
       </div>
 
         <!-- Formular -->
@@ -26,13 +27,22 @@
           <label for="description">Beskrivelse:</label><br />
           <textarea id="description" name="description" rows="4" cols="50" required></textarea><br /><br />
 
+
+          <label for="trainer">Træner</label>
+          <select name="trainer" id="trainer" required>
+            <option value="" disabled selected>Vælg Træner</option>
+            <option value="Casper">Casper</option>
+            <option value="Ny Træner">Ny Træner</option> 
+          </select>
+
+
           <label for="category">Kategori</label>
           <select name="category" id="category" required>
-            <option value="" disabled selected>Vælg kategori</option>
-            <option value="Svinganalyse - Driver & Jern">Svinganalyse - Driver & Jern</option>
-            <option value="Short Game - Chips & Pitches">Short Game - Chips & Pitches</option>
-            <option value="Mere Længde - Driving & Distance">Mere Længde- Driving & Distance</option>
-            <option value="Andet">Andet</option>   
+            <option value="" disabled selected>Vælg Produkt</option>
+            <option value="Èn konsultation">Èn konsultation</option>
+            <option value="5 ugers forløb">5 ugers forløb</option>
+            <option value="10 ugers forløb">10 ugers forløb</option>
+            <option value="Sæsonforløb">Sæsonforløb</option>   
           </select>
 
           <!-- Filupload -->
