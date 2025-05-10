@@ -329,3 +329,22 @@ button[type="submit"]:active {
   opacity: 1;
   bottom: 60px;
 }
+
+.top {
+  display: flex;
+  gap: 50px; /* Mellemrum mellem de to elementer */
+  flex-direction: column;
+}
+
+.mid {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  color: #666666;
+}
+
+.ordre {
+  color: #0d4b91;
+  font-size: 14px;
+  font-weight: bold;
+}
