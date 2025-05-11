@@ -3,7 +3,7 @@ const multer = require('multer');
 const upload = multer(); // bruger memoryStorage
 
 
-const {insertMessageToDatabase, createChatIntoDatabase } = require ('./controller/createChat');
+const {createChatIntoDatabase } = require ('./controller/createChat');
 const { showChatsFromDatabase } = require ('./controller/chatOversigt');
 
 
