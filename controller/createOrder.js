@@ -1,8 +1,8 @@
 
-const Chat = require ("../model/classes/Chat");
+const Order = require ("../model/classes/Order");
 
 
-const createChatIntoDatabase = async (req, res) => {
+const createOrderIntoDatabase = async (req, res) => {
     try {
         const title = req.body.title;
         const description = req.body.description;
@@ -17,7 +17,7 @@ const createChatIntoDatabase = async (req, res) => {
           mediaData = req.file.buffer;    // binary data fra multer (memoryStorage)
         }
 
-        const msg = new Chat(
+        const msg = new Order(
             null,         
             title,
             description,
@@ -27,7 +27,7 @@ const createChatIntoDatabase = async (req, res) => {
             mediaData,
         ); 
 
-        await msg.createChat();
+        await msg.createOrder();
 
         res.redirect('/');
     } catch (error) {
@@ -35,5 +35,5 @@ const createChatIntoDatabase = async (req, res) => {
         res.status(500).send('Noget gik galt.');
     }
 };
-module.exports.createChatIntoDatabase = createChatIntoDatabase;
+module.exports.createOrderIntoDatabase = createOrderIntoDatabase;
 

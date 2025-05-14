@@ -3,8 +3,8 @@ const multer = require('multer');
 const upload = multer(); // bruger memoryStorage
 
 
-const {createChatIntoDatabase } = require ('./controller/createChat');
-const { showChatsFromDatabase } = require ('./controller/chatOversigt');
+const {createOrderIntoDatabase } = require ('./controller/createOrder');
+const { showOrdersFromDatabase } = require ('./controller/orderOversigt');
 
 
 const app = express();
@@ -17,8 +17,8 @@ app.use(express.static('view', { index: 'app.html' })); //dette kører til forsi
 
 
 //routes
-app.post('/createChat', upload.single("file"),createChatIntoDatabase);
-app.get('/chatOversigt', showChatsFromDatabase);
+app.post('/createChat', upload.single("file"),createOrderIntoDatabase);
+app.get('/chatOversigt', showOrdersFromDatabase);
 
 
 //start server

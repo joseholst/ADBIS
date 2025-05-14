@@ -2,11 +2,11 @@ const sql = require('mssql');
 const config = require ('../../config');
 
 
-class Chat {
+class Order {
     constructor(
-        chatID, title, description, trainer, category, mediaType, mediaData, date
+        orderID, title, description, trainer, category, mediaType, mediaData, date
     ){
-        this.chatID = chatID;
+        this.orderID = orderID;
         this.title = title;
         this.description = description;
         this.trainer = trainer;
@@ -17,7 +17,7 @@ class Chat {
         this.messageStatus = 'afventer svar';
     }
 
-    async createChat(){
+    async createOrder(){
         try {
             await sql.connect(config);
             const request = new sql.Request();
@@ -34,7 +34,7 @@ class Chat {
     }
 
 
-    async showChats(){
+    async showOrders(){
         try {
             await sql.connect(config);
             const request = new sql.Request();
@@ -52,4 +52,4 @@ class Chat {
 
 };
 
-module.exports = Chat;
+module.exports = Order;
