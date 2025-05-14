@@ -1,8 +1,10 @@
-//hvilke oplysninger har en træner brug for?
-class Trainer extends User{
-    constructor(
-        userID, name, email, password
-    ){
-        super(userID, name, email, password);
+class Trainer extends User {
+    constructor(id, name, email, phone, password_hash, bio) {
+        super(id, name, email, phone, password_hash);
+        this.bio = bio;
+    }
+
+    update_trainerinfo() {
+      
     }
 }

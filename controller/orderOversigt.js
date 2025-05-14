@@ -22,7 +22,7 @@ const showOrdersFromDatabase = async (req, res) => {
         </div>
         </div>
         <div class="right-column">
-          <span class="status">${order.MessageStatus || ''}</span>
+          <span class="status">${order.Status || ''}</span>
           <button class="openChat" onclick="alert('Du har åbnet chat: ${order.Title}')">Gå til chat</button>
         </div>
         </li>

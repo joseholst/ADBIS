@@ -4,17 +4,17 @@ const config = require ('../../config');
 
 class Order {
     constructor(
-        orderID, title, description, trainer, category, mediaType, mediaData, date
-    ){
+        orderID, title, description, trainer, category, mediaType, mediaData, create_at)
+    {
         this.orderID = orderID;
         this.title = title;
         this.description = description;
-        this.trainer = trainer;
-        this.category = category
+        this.trainer = trainer; //baseret på klassen Trainer
+        this.category = category //baseret på klassen Category/Product
         this.mediaType = mediaType;
         this.mediaData = mediaData;
-        this.date = date;
-        this.messageStatus = 'afventer svar';
+        this.created_at = create_at;
+        this.status = 'afventer svar';
     }
 
     async createOrder(){
@@ -24,7 +24,7 @@ class Order {
     
             request.input("MediaData", sql.VarBinary(sql.MAX), this.mediaData);
 
-            await request.query(`INSERT INTO Chat (Title, Description, Trainer, Category, MediaType, MediaData, MessageStatus, UserID) VALUES ('${this.title}', '${this.description}', '${this.trainer}', '${this.category}', '${this.mediaType}', @MediaData, '${this.messageStatus}','1')`);
+            await request.query(`INSERT INTO Chat (Title, Description, Trainer, Category, MediaType, MediaData, MessageStatus, UserID) VALUES ('${this.title}', '${this.description}', '${this.trainer}', '${this.category}', '${this.mediaType}', @MediaData, '${this.status}','1')`);
             
             console.log(`Message inserted into database "${this.title}"`);
         } catch (error) {
@@ -49,7 +49,10 @@ class Order {
         }
     }
 
+    async uploadVideo(){
 
+
+    };
 };
 
 module.exports = Order;

@@ -1,10 +1,27 @@
 class User {
     constructor(
-        userId, name, email, password
+        id, name, email, phone, password_hash
     ) {
-        this.userId = userId;
+        this.id = id;
         this.name = name;
         this.email = email;
-        this.password = password;
-    };
+        this.phone = phone;
+        this.password_hash = password_hash;
+    }
+
+    register() {
+        
+    }
+
+    login() {
+       
+    }
+
+    change_password() {
+      
+    }
+
+    logout() {
+        
+    }
 }
