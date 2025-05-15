@@ -15,7 +15,7 @@ const showOrdersFromDatabase = async (req, res) => {
         <li class="chat-item">
         <div class="top-row">
           <strong>${order.Title}</strong><br>
-          <span class ="ordre"> Ordre ID: ${order.OrderID}</span>
+          <span class ="ordre"> Ordre ID: ${order.ChatID}</span>
         <div class = "mid">
         <span> Træner: ${order.Trainer}</span>
         <span> Kategori: ${order.Category}</span>
